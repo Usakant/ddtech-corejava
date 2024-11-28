@@ -1,10 +1,7 @@
 package javaeight;
 
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -23,6 +20,21 @@ public class InterviewProgram {
         int[] b = {2, 4, 6, 8};
         int[] array = IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().toArray();
         System.out.println(Arrays.asList(array).toString());
+        //String  words = "dad love my dad";
+       // List<String> listOfWords = Arrays.asList(words.split(" "));
+
+        //System.out.println("listOfWords "+ listOfWords);
+        String  words = "dad love my dad";
+        Arrays.asList(words.split(" ")).stream().filter(w -> w.contentEquals(new StringBuilder(String.valueOf(w)).reverse())).distinct().forEach(System.out::println);
+        //System.out.println("Pallidrome "+ palWord.toString());
+// write a program reverse a String with preserve  space
+        String love = "I love my India";
+        System.out.println(new StringBuilder(love).reverse());
+
+        String alphanumeric = "123f34gh345ab2c";
+        System.out.println(alphanumeric.replaceAll("[^\\p{Alpha}\\p{Digit}]+"," m."));
+
+
     }
 
 }
